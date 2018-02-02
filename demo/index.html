@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HMR Chat Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../dist/jquery.hmr-chat.css">
+</head>
+<body>
+  <div id="chat"></div>
+  
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAvu-ZkzToZGC0TmhT7OtCdvw-oDxSK8TE",
+      authDomain: "chat-plugin-eaa71.firebaseapp.com",
+      databaseURL: "https://chat-plugin-eaa71.firebaseio.com",
+      projectId: "chat-plugin-eaa71",
+      storageBucket: "",
+      messagingSenderId: "159822652575"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="../dist/jquery.hmr-chat.js"></script>
+  <script>
+    $('#chat').hmrChat({ title: 'My Chat' });
+  </script>
+</body>
+</html>
