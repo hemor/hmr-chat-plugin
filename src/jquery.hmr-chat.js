@@ -196,7 +196,9 @@
     }
 
     function _showLoading() {
-      $chatboxWindow.addClass('hmr-loading');
+        var $sheet = $("#__custom"), cssText = `.hmr-loading-modal:before { width: ${$chatboxWindow.innerWidth() - 15}px !important; height: ${$chatboxWindow.innerHeight()}px !important;}`;//for a fixed position on :before, width,height of 100% will only be relative to that of the body element, hence using the chatbox size to determine the overlay size
+        $sheet.length ? $sheet.html(cssText) : $('<style id="__custom" />').html(cssText).appendTo("head");//did a css Overide on the pseudo:before, since it is not a dom element, no jquery Api can modify d style
+        $chatboxWindow.addClass('hmr-loading');
     }
 
     function _hideLoading() {
